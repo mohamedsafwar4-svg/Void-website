@@ -93,6 +93,32 @@ h2{font-size:clamp(34px,8vw,62px);font-weight:500;line-height:1.05;letter-spacin
 .ft a,.fr a{display:block;color:inherit;text-decoration:none;opacity:.78;transition:opacity .25s}.ft a:hover,.fr a:hover{opacity:1}
 .fr{position:relative;z-index:2;margin:20px 22px 0;padding-top:12px;border-top:.5px solid rgba(233,228,218,.16);text-align:right;font:400 10.5px 'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:#e9e4da}
 @media(max-width:720px){.ft{grid-template-columns:1fr 1fr}.fb{grid-column:1/-1}}
+
+/* chatbot */
+#cb-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:linear-gradient(160deg,rgba(70,68,96,.8),rgba(14,14,20,.9));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#ececf2;display:grid;place-items:center;cursor:pointer;opacity:0;transform:scale(.6);pointer-events:none;transition:opacity .4s,transform .4s cubic-bezier(.23,1,.32,1),box-shadow .3s;box-shadow:0 8px 30px rgba(0,0,0,.5),0 0 26px rgba(167,139,250,.28);-webkit-tap-highlight-color:transparent}
+#cb-fab.on{opacity:1;transform:none;pointer-events:auto}#cb-fab:hover{box-shadow:0 8px 30px rgba(0,0,0,.5),0 0 40px rgba(167,139,250,.5)}
+#cb-fab svg{grid-area:1/1;width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:opacity .25s,transform .35s}
+#cb-fab .x{opacity:0;transform:rotate(-90deg)}#cb.open #cb-fab .c{opacity:0;transform:rotate(90deg)}#cb.open #cb-fab .x{opacity:1;transform:none}
+#cb-p{position:fixed;right:16px;bottom:calc(90px + env(safe-area-inset-bottom,0px));z-index:60;width:min(380px,calc(100vw - 32px));height:min(540px,calc(100svh - 150px));display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,.14);background:rgba(12,12,16,.94);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(0,0,0,.65),0 0 40px rgba(167,139,250,.12);overflow:hidden;transform-origin:bottom right;opacity:0;transform:translateY(14px) scale(.95);pointer-events:none;visibility:hidden;transition:opacity .3s,transform .4s cubic-bezier(.23,1,.32,1),visibility 0s .4s}
+#cb.open #cb-p{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition:opacity .3s,transform .4s cubic-bezier(.23,1,.32,1),visibility 0s}
+.cbh{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.cba{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font:700 15px 'Space Grotesk',sans-serif;color:#0a0a0f;background:linear-gradient(135deg,#ececf2,#a78bfa)}
+.cbh b{display:block;font-weight:500;font-size:15px;line-height:1.2}.cbh span{font-size:10px}
+#cb-x{margin-left:auto;background:none;border:0;color:var(--mut);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1}
+#cb-m{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:16px;display:flex;flex-direction:column;gap:10px}
+.cm{max-width:86%;padding:10px 14px;border-radius:16px;font-size:15px;line-height:1.55;animation:cbin .35s cubic-bezier(.23,1,.32,1);word-wrap:break-word}
+.cm.b{align-self:flex-start;background:rgba(255,255,255,.07);border:1px solid var(--line);border-bottom-left-radius:5px}
+.cm.u{align-self:flex-end;background:#ececf2;color:#000;border-bottom-right-radius:5px}
+.cm a{display:inline-block;margin:8px 6px 0 0;padding:8px 14px;border-radius:99px;background:#ececf2;color:#000;font-weight:500;font-size:13.5px;text-decoration:none}
+.cm.t{display:flex;gap:5px;padding:14px 16px}.cm.t i{width:6px;height:6px;border-radius:50%;background:#a78bfa;animation:cbd 1s infinite}.cm.t i:nth-child(2){animation-delay:.15s}.cm.t i:nth-child(3){animation-delay:.3s}
+@keyframes cbin{from{opacity:0;transform:translateY(8px)}}@keyframes cbd{0%,60%,100%{opacity:.25;transform:none}30%{opacity:1;transform:translateY(-4px)}}
+#cb-c{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 10px}
+#cb-c button{border:1px solid var(--line);background:none;color:var(--fg);padding:7px 13px;border-radius:99px;font:inherit;font-size:13.5px;cursor:pointer;transition:background .2s,border-color .2s}
+#cb-c button:hover{background:rgba(167,139,250,.16);border-color:rgba(167,139,250,.5)}
+.cbf{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
+#cb-i{flex:1;min-width:0;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:99px;padding:11px 16px;color:var(--fg);font:inherit;font-size:16px;outline:none}#cb-i:focus{border-color:rgba(167,139,250,.6)}
+#cb-s{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:#ececf2;color:#000;cursor:pointer;display:grid;place-items:center}#cb-s svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cbn{text-align:center;padding:0 12px 10px;font-size:10px;opacity:.7}
 </style>
 </head>
 <body>
@@ -283,6 +309,44 @@ function loop(){if(!on){run=0;return}x.fillStyle='rgba(5,5,6,.12)';x.fillRect(0,
 B=B.filter(b=>{b.l--;b.x+=(Math.random()-.5)*4;b.y+=(Math.random()-.5)*4;x.fillStyle=b.c;x.fillRect(b.x,b.y,b.w,b.h);return b.l>0});
 S=S.filter(s=>{s.l--;s.y+=s.v;const y=s.y|0,h=s.h|0;if(h>0&&y>=0&&y+h<=H)x.putImageData(x.getImageData(0,y,W,h),s.o,y);x.fillStyle=`hsla(${Math.random()*360},100%,50%,.05)`;x.fillRect(0,s.y,W,s.h);return s.l>0});
 requestAnimationFrame(loop)}})();
+</script>
+<div id="cb"><button id="cb-fab" aria-label="Open chat" aria-expanded="false"><svg class="c" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.7 7.1L4 20.5l1.4-4.2A8 8 0 1 1 20 12z"/></svg><svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<div id="cb-p" role="dialog" aria-label="VOID assistant"><div class="cbh"><div class="cba">V</div><div><b>VOID Assistant</b><span class="mono">Telegram bots &amp; websites</span></div><button id="cb-x" aria-label="Close">×</button></div>
+<div id="cb-m" aria-live="polite"></div><div id="cb-c"></div>
+<div class="cbf"><input id="cb-i" type="text" dir="auto" placeholder="Ask anything… / اسأل أي حاجة" autocomplete="off" maxlength="200"><button id="cb-s" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+<div class="cbn mono">Automated assistant · for real talk, message VOID on Telegram</div></div></div>
+<script>
+(()=>{const $=q=>document.querySelector(q),root=$('#cb'),fab=$('#cb-fab'),box=$('#cb-m'),chips=$('#cb-c'),inp=$('#cb-i');
+const TG='https://t.me/M_o_h45',BOT='https://t.me/temp229_bot';
+const nz=t=>t.toLowerCase().replace(/[\u064B-\u0652\u0640]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[^\p{L}\p{N}\s]/gu,' ');
+const A={tg:['Message on Telegram','راسله على تليجرام',TG],bot:['Open the bot','افتح البوت',BOT],work:['See the work','شوف الأعمال','#work']};
+const K={
+greet:{w:1,k:['hi','hello','hey','سلام','اهلا','مرحبا','هاي','ازيك','صباح','مساء'],en:'Hi! Ask me about services, work, skills, pricing, or how to contact VOID.',ar:'أهلاً! اسألني عن الخدمات أو الأعمال أو المهارات أو الأسعار أو طريقة التواصل مع VOID.'},
+about:{w:1,k:['who','about','age','old','مين','نبذه','عنك','عمرك','صاحب','void','فويد'],en:'VOID is 19 years old and builds Telegram bots and simple to medium websites, with clean code and fast pages.',ar:'VOID عنده 19 سنة، وبيعمل بوتات تليجرام ومواقع بسيطة لمتوسطة، بكود نضيف وصفحات سريعة.'},
+services:{w:1,k:['service','offer','build','make','create','what do','خدمات','بتعمل','تعمل ايه','تقدر','شغلك','بتقدم'],en:'VOID builds Telegram bots and simple to medium websites, with clean code and fast pages. Tell me which one you need and I will point you the right way.',ar:'VOID بيعمل بوتات تليجرام ومواقع بسيطة لمتوسطة، بكود نضيف وصفحات سريعة. قولي محتاج أنهي واحد وأوجّهك.',a:['tg','work']},
+bot:{w:1,k:['bot','telegram','بوت','بوتات','تليجرام','تيليجرام','قران','اذكار'],en:'VOID makes Telegram bots. The live example is @temp229_bot: a Quran and adhkar bot with a big library of reciters, a smart Mushaf, Quran radio, daily reminders and prayer times.',ar:'VOID بيعمل بوتات تليجرام. المثال الشغال @temp229_bot: بوت قرآن وأذكار فيه موسوعة كبيرة من القرّاء ومصحف ذكي وإذاعة القرآن وتذكير يومي ومواقيت الصلاة.',a:['bot','tg']},
+website:{w:1,k:['website','site','web','page','portfolio','موقع','مواقع','صفحه','بورتفوليو'],en:'VOID builds simple to medium websites with clean code and fast pages. You are looking at one right now.',ar:'VOID بيعمل مواقع بسيطة لمتوسطة بكود نضيف وصفحات سريعة. وإنت قدامك واحد منهم دلوقتي.',a:['tg']},
+price:{w:3,k:['price','cost','how much','pricing','budget','rate','سعر','اسعار','بكام','تكلفه','كام','فلوس','ميزانيه'],en:'Pricing depends on what you need. Message VOID on Telegram with two lines: what it is and when you need it, and you will get a straight answer.',ar:'السعر بيعتمد على اللي محتاجه. ابعت لـ VOID على تليجرام سطرين: إيه المشروع ومحتاجه امتى، وهيرد عليك بوضوح.',a:['tg']},
+time:{w:3,k:['how long','deadline','delivery','turnaround','when','مده','تسليم','وقت','امتي','كام يوم','ياخد'],en:'Timing depends on the scope. Send the details on Telegram and you will get a realistic estimate.',ar:'المدة بتعتمد على حجم الشغل. ابعت التفاصيل على تليجرام وهتاخد تقدير واقعي.',a:['tg']},
+contact:{w:2,k:['contact','hire','reach','talk','message','email','تواصل','كلم','اكلم','رقم','يوزر','حساب','اتصل','اكلمه','راسل'],en:'The fastest way is Telegram: @M_o_h45. Two lines is enough: what it is and when you need it.',ar:'أسرع طريقة تليجرام: @M_o_h45. سطرين كفاية: إيه المشروع ومحتاجه امتى.',a:['tg']},
+skills:{w:2,k:['skill','language','tech','stack','python','java','sql','git','لغات','تقنيات','مهارات','بتستخدم','بتعرف'],en:'Python, Java, JavaScript, HTML, CSS, Telegram Bot API, SQL, Git and REST.',ar:'Python وJava وJavaScript وHTML وCSS وTelegram Bot API وSQL وGit وREST.'},
+work:{w:2,k:['work','project','example','sample','previous','اعمال','نماذج','مشاريع','سابقه','شغل','امثله'],en:'Selected work: the Sadaqah Jariyah Bot, a Telegram bot for Quran and adhkar. See it in the Work section or open it directly.',ar:'من الأعمال: بوت الصدقة الجارية، بوت تليجرام للقرآن والأذكار. شوفه في قسم الأعمال أو افتحه مباشرة.',a:['work','bot']},
+thanks:{w:2,k:['thanks','thank','thx','شكرا','تسلم','جزاك','ميرسي'],en:'Anytime. If you have a project, Telegram is the fastest way to reach VOID.',ar:'العفو. لو عندك مشروع، تليجرام أسرع طريقة توصل بيها لـ VOID.',a:['tg']},
+bye:{w:2,k:['bye','goodbye','see you','باي','مع السلامه','سلام عليكم ورحمه'],en:'See you. Back to the void.',ar:'في أمان الله. ارجع للفراغ في أي وقت.'}};
+const FB={en:'I am a simple assistant, so I may have missed that. Try one of the topics below, or message VOID directly on Telegram.',ar:'أنا مساعد بسيط وممكن ما فهمتش قصدك. جرّب واحد من الموضوعات تحت، أو كلّم VOID مباشرة على تليجرام.',a:['tg']};
+const CH={services:['Services','الخدمات'],work:['Work','الأعمال'],skills:['Skills','المهارات'],price:['Pricing','الأسعار'],contact:['Contact','التواصل']};
+let lang=(navigator.language||'').startsWith('ar')?'ar':'en',busy=0,first=1;
+const L=()=>lang==='ar'?1:0;
+function msg(t,c,acts){const d=document.createElement('div');d.className='cm '+c;d.dir='auto';d.textContent=t;(acts||[]).forEach(k=>{const a=document.createElement('a'),x=A[k];a.textContent=x[L()];a.href=x[2];if(x[2][0]==='#'){a.onclick=e=>{e.preventDefault();root.classList.remove('open');const el=$(x[2]);el&&el.scrollIntoView({behavior:'smooth'})}}else{a.target='_blank';a.rel='noopener'}d.appendChild(a)});box.appendChild(d);box.scrollTop=box.scrollHeight;return d}
+function showChips(bi){chips.textContent='';Object.keys(CH).forEach(k=>{const b=document.createElement('button');b.textContent=bi?CH[k][0]+' · '+CH[k][1]:CH[k][L()];b.onclick=()=>ask(CH[k][L()],k);chips.appendChild(b)})}
+function pick(t){const n=' '+nz(t)+' ';let best=null,bs=0;for(const id in K){let h=0;K[id].k.forEach(w=>{const q=nz(w);if(q.length<=3?n.includes(' '+q+' '):n.includes(q))h++});const sc=h*K[id].w;if(sc>bs){bs=sc;best=id}}return best}
+function reply(id){const r=id?K[id]:FB;busy=1;const tp=msg('','b t');tp.innerHTML='<i></i><i></i><i></i>';const txt=r[lang];setTimeout(()=>{tp.remove();msg(txt,'b',r.a);showChips(0);busy=0},Math.min(1100,450+txt.length*7))}
+function ask(t,id){t=t.trim();if(!t||busy)return;if(/[\u0600-\u06FF]/.test(t))lang='ar';else if(/[a-z]/i.test(t))lang='en';msg(t,'u');chips.textContent='';reply(id||pick(t))}
+function open(v){root.classList.toggle('open',v);fab.setAttribute('aria-expanded',v);if(v&&first){first=0;msg('Hi, I am the VOID assistant. Ask me about services, work, or how to get in touch.','b');setTimeout(()=>{msg('أهلاً، أنا مساعد VOID. اسألني عن الخدمات أو الأعمال أو طريقة التواصل.','b');showChips(1)},350)}}
+fab.onclick=()=>open(!root.classList.contains('open'));$('#cb-x').onclick=()=>open(0);
+$('#cb-s').onclick=()=>{ask(inp.value);inp.value=''};inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();ask(inp.value);inp.value=''}});
+addEventListener('keydown',e=>{if(e.key==='Escape')open(0)});
+const on=()=>fab.classList.add('on');if(!document.getElementById('pl'))on();else document.addEventListener('vr',on,{once:true});setTimeout(on,9000)})();
 </script>
 </body>
 </html>
